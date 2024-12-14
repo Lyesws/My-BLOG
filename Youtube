@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مدونة قنوات اليوتيوب</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            direction: rtl;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+        }
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+        nav a:hover {
+            background-color: #4CAF50;
+        }
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>مرحبًا بكم في مدونة قنواتي</h1>
+    </header>
+    <nav>
+        <a href="#" class="tab-link" data-tab="tab1">1001 NOSTALGERIA</a>
+        <a href="#" class="tab-link" data-tab="tab2">DZCHAPLIN</a>
+        <a href="#" class="tab-link" data-tab="tab3">DZGAMES</a>
+        <a href="#" class="tab-link" data-tab="tab4">DZPROFIT</a>
+    </nav>
+    <div class="content">
+        <div id="tab1" class="tab-content">
+            <h2>1001 NOSTALGERIA</h2>
+            <p>مرحبًا بكم في تبويب قناة 1001 NOSTALGERIA حيث نستعرض أجمل لحظات الحنين إلى الماضي.</p>
+        </div>
+        <div id="tab2" class="tab-content">
+            <h2>DZCHAPLIN</h2>
+            <p>استمتعوا بمحتوى كوميدي فريد ومميز على قناة DZCHAPLIN.</p>
+        </div>
+        <div id="tab3" class="tab-content">
+            <h2>DZGAMES</h2>
+            <p>اكتشفوا أحدث الألعاب والمنافسات المثيرة على قناة DZGAMES.</p>
+        </div>
+        <div id="tab4" class="tab-content">
+            <h2>DZPROFIT</h2>
+            <p>تعرفوا على أسرار الربح والعمل عبر الإنترنت مع قناة DZPROFIT.</p>
+        </div>
+    </div>
+    <script>
+        const links = document.querySelectorAll('.tab-link');
+        const contents = document.querySelectorAll('.tab-content');
+
+        links.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const target = e.target.getAttribute('data-tab');
+
+                contents.forEach(content => {
+                    content.classList.remove('active');
+                });
+
+                document.getElementById(target).classList.add('active');
+            });
+        });
+
+        // Default to showing the first tab
+        document.getElementById('tab1').classList.add('active');
+    </script>
+</body>
+</html>
